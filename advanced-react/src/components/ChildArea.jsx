@@ -6,6 +6,12 @@ const style = {
 
 export const ChildArea = (props) => {
   const { open } = props;
+  console.log('ChildArea is rendering!!');
+
+  const data = [...Array(2000).keys()];
+  data.forEach(() => {
+    console.log('...');
+  });
   return (
     <>
       {open ? (
