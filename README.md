@@ -38,3 +38,11 @@ ReactのフレームワークであるNext.jsではデフォルトで提供さ�
 `styled.`を使ってタグごとにCSSを指定することができ、コンポーネントとしてHTMLタグを設定する方法
 CSS-in-JSのライブラリの中でも根強い人気のあるもの
 Sass記法も認識される
+
+## Emotion
+CSS-in-JSライブラリで、styled-componentsにインスパイアされており、特定のフレームワークにとらわれずに使用することができる
+`@emotion/react`と`@emotion/styled`パッケージをインストールする必要がある
+インポート時に、ファイル最上部に以下の記述が必要
+```jsx
+/** @jsxImportSource @emotion/react */
+```
