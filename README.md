@@ -33,3 +33,8 @@ CSSスタイルを変数にオブジェクトとして格納し、キャメル�
 ## Styled JSX
 コンポーネントstyleタグを記述し、`<style jsx="true">`を使ってCSSを記述する方法
 ReactのフレームワークであるNext.jsではデフォルトで提供されているCSSの適用方法になっている
+
+## styled-components
+`styled.`を使ってタグごとにCSSを指定することができ、コンポーネントとしてHTMLタグを設定する方法
+CSS-in-JSのライブラリの中でも根強い人気のあるもの
+Sass記法も認識される
