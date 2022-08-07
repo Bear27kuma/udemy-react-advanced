@@ -51,3 +51,27 @@ CSS-in-JSライブラリで、styled-componentsにインスパイアされてお
 従来のウェブサイドであれば、それぞれのURLに対応した静的なHTMLファイルをサーバー側に持っていたので、URLにマッチするものを返していた
 SPA(Single Page Application)の場合は画面の要素を書き換えるため、再度URLにアクセスすると初期ページに戻ってしまう
 → そのため、ルーティングの設定を行って適切なページへとアクセスさせるようにする
+
+## 基本的なページ遷移
+React Routerの`BrowserRouter`を使用すると、`BrowserRouter`コンポーネントで囲った配下のルーティングを有効にする
+`Link`はaタグのようなもので、ページ遷移の処理を簡単に行うことができる
+```jsx
+<Link to="/">Home</Link>
+```
+ルーティングへの出しわけは`Routes`コンポーネントで行い、ルートにマッチしたものの判定には`Route`コンポーネントを使用する
+（React Router5では`Routes`ではなく、`Switch`を使用していた）
+
+React Router5での記法
+```jsx
+<Switch>
+  <Route path="page1">
+    <Page1 />
+  </Route>
+</Switch>
+```
+React Router6での記法
+```jsx
+<Routes>
+  <Route path="/page1" element={<Page1 />} />
+</Routes>
+```
