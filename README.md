@@ -141,3 +141,19 @@ react-router-domの`useParams`というHooksを使って、パラメータを扱
 ```jsx
 const { id } = useParams();
 ```
+
+## クエリパラメータを扱う
+JavaScriptの標準の機能だけでもクエリパラメータを扱うことができるが、react-router-domの中に`useLocation`というHooksがあるので、こちらを使用してクエリパラメータを扱う
+
+さらにJavaScriptの`URLSearchParams`も使用する
+```jsx
+const { search } = useLocation();
+const query = new URLSearchParams(search);
+return (
+  <div>
+    <h1>UrlParameterページです</h1>
+    <p>パラメータは {id} です</p>
+    <p>クエリパラメータは {query.get('name')} です</p>
+  </div>
+);
+```
