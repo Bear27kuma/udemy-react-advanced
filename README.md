@@ -165,3 +165,12 @@ return (
 ```
 一覧ページから詳細ページへ情報を渡すことで、詳細ページからの無駄なAPIアクセスを取り除くことができる
 
+## Linkを使わないページ遷移
+`useNavigate`を使って`Link`ではなく、JavaScriptでページ遷移を行うことができる（v5では`useHistory`）
+```jsx
+const navigate = useNavigate();
+const onClickDetailA = () => navigate('/page1/detailA');
+
+<button onClick={onClickDetailA}>DetailA</button>
+```
+ブラウザを戻る際は`navigate(-1)`を使用する
