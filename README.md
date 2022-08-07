@@ -1,3 +1,9 @@
+# バージョン情報
+| パッケージ | バージョン |
+| ----- | ----- |
+| react | 18.2.0 |
+| react-router-dom | 6.3.0 |
+
 # 再レンダリングの仕組みとレンダリングの最適化
 ## 再レンダリングが起きる条件
 ### どんな時に再レンダリングされるか？
@@ -87,3 +93,22 @@ React Router6での記法
 ```
 
 ## ルート定義の分割
+別途`router`ディレクトリを作成し、そちらにルーティングの記述をしたファイルを格納していく
+ルートの記述は切り出して別ファイルとして持っておく方が管理がしやすくなる
+
+router/Router.jsx
+```jsx
+export const Router = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/page1">
+        <Route index element={<Page1 />} />
+        <Route path="detailA" element={<Page1DetailA />} />
+        <Route path="detailB" element={<Page1DetailB />} />
+      </Route>
+      <Route path="/page2" element={<Page2 />} />
+    </Routes>
+  );
+};
+```
