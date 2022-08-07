@@ -174,3 +174,10 @@ const onClickDetailA = () => navigate('/page1/detailA');
 <button onClick={onClickDetailA}>DetailA</button>
 ```
 ブラウザを戻る際は`navigate(-1)`を使用する
+
+## 404ページを用意する
+存在しないURLへのアクセスは404ページへアクセスさせる
+方法としてはどのルーティングにも一致しなかった場合に404ページを表示させるようにする
+```jsx
+<Route path="*" element={<Page404 />} />
+```

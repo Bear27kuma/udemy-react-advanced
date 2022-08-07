@@ -6,6 +6,7 @@ import { Page1DetailA } from '../components/Page1DetailA';
 import { Page1DetailB } from '../components/Page1DetailB';
 import { Page2 } from '../components/Page2';
 import { UrlParameter } from '../components/UrlParameter';
+import { Page404 } from '../components/Page404';
 
 export const Router = () => {
   return (
@@ -20,6 +21,7 @@ export const Router = () => {
         <Route index element={<Page2 />} />
         <Route path=":id" element={<UrlParameter />} />
       </Route>
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 };
