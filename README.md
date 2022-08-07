@@ -46,3 +46,8 @@ CSS-in-JSライブラリで、styled-componentsにインスパイアされてお
 ```jsx
 /** @jsxImportSource @emotion/react */
 ```
+
+# React Router
+従来のウェブサイドであれば、それぞれのURLに対応した静的なHTMLファイルをサーバー側に持っていたので、URLにマッチするものを返していた
+SPA(Single Page Application)の場合は画面の要素を書き換えるため、再度URLにアクセスすると初期ページに戻ってしまう
+→ そのため、ルーティングの設定を行って適切なページへとアクセスさせるようにする
