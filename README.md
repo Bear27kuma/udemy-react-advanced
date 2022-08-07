@@ -75,3 +75,15 @@ React Router6での記法
   <Route path="/page1" element={<Page1 />} />
 </Routes>
 ```
+
+## ネストされたページ遷移
+さらに階層が深いページへのルーティングについては、React Router6から記述方法が異なり、`<Route>`コンポーネントを入れ子にして記述することで実現することができる
+```jsx
+<Route path="/page1">
+  <Route index={true} element={<Page1 />} />
+  <Route path="detailA" element={<Page1DetailA />} />
+  <Route path="detailB" element={<Page1DetailB />} />
+</Route>
+```
+
+## ルート定義の分割
