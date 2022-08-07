@@ -157,3 +157,11 @@ return (
   </div>
 );
 ```
+
+## stateを渡すページ遷移
+`Link`コンポーネントの`to`属性で渡す際に以下のようにstateを渡すことができる
+```jsx
+<Link to={{ pathname: "/page1/detailA", state: arr }}>DetailA</Link>
+```
+一覧ページから詳細ページへ情報を渡すことで、詳細ページからの無駄なAPIアクセスを取り除くことができる
+
