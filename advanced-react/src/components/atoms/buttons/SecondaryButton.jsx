@@ -4,10 +4,10 @@ import { BaseButton } from './BaseButton';
 export const SecondaryButton = (props) => {
   const { children } = props;
   return (
-    <Button>{children}</Button>
+    <SButton>{children}</SButton>
   );
 };
 
-const Button = styled(BaseButton)`
+const SButton = styled(BaseButton)`
   background-color: #11999e;
 `;
