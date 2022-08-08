@@ -31,3 +31,32 @@ Atomic Designとは
 5. PAGES （ページ）
    - 最終的に表示される1画面
       - ページ遷移ごとに表示される各画面
+
+## Atomの作成
+ボタン類などの使い回しができるAtomについてはテキスト部分は毎回異なるものをレンダリングできるようにするため、`props`の`children`を用いて、タグに入力したテキストを使うのが良い
+
+CSSのスタイルが一部のみ異なるデザインの場合は、共通のCSSスタイルを別ファイルで定義し、Atom側のファイルで読み込んで個別のスタイル部分のみ適用することができる
+
+BaseButton.jsx
+```jsx
+import styled from 'styled-components';
+
+export const BaseButton = styled.button`
+  padding: 6px 24px;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  outline: none;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+`;
+```
+
+PrimaryButton.jsx
+```jsx
+const Button = styled(BaseButton)`
+  background-color: #40514e;
+`;
+```
