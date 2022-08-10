@@ -1,20 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
-import { Router } from './router/Router';
+import { BrowserRouter } from 'react-router-dom';
+
+import { PrimaryButton } from './components/atoms/buttons/PrimaryButton';
+import { SecondaryButton } from './components/atoms/buttons/SecondaryButton';
+import { SearchInput } from './components/molecules/SearchInput';
+import { UserCard } from './components/organisms/user/UserCard';
+import { HeaderOnly } from './components/templates/HeaderOnly';
+import { DefaultLayout } from './components/templates/DefaultLayout';
+import { Router } from './components/router/Router';
 import './App.css';
+import './styles.css';
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Link to="/">Home</Link>
-        <br/>
-        <Link to="page1">Page1</Link>
-        <br/>
-        <Link to="page2">Page2</Link>
-      </div>
-      <Router />
-    </BrowserRouter>
-  );
+  return <Router />;
 }
 
