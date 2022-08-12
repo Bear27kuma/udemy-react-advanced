@@ -12,4 +12,5 @@
 - [CSSの当て方](Notes/CSS.md)
 - [React Router](Notes/ReactRouter.md)
 - [Atomic Design](Notes/AtomicDesign.md)
+- [Global State](Notes/GlobalState.md)
 
