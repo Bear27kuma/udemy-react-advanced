@@ -57,3 +57,34 @@ Contextを使う上で再レンダリングには注意する必要がある
 グローバルな値を参照しているため、再レンダリングされないと値が反映されないので正常な動作ではあるが、こちらを最適化する
 
 コンポーネントを`memo`化することで子コンポーネントでも変更がないものは再レンダリングしないようになる
+
+## Recoilを使う
+Facebookから出ているグローバルステート管理の`Recoil`というライブラリがあるので、こちらをインストールして使ってみる
+
+recoilを定義する側のファイルは以下の記述のみでOK（`userState.js`）
+```js
+import { atom } from 'recoil';
+
+export const userState = atom({
+  // stateを参照する一意のkey
+  key: "userState",
+  // 初期値
+  default: { isAdmin: false }
+});
+
+```
+
+あとは使用する大元のコンポーネントで`<RecoilRoot>`タグで全体を囲う
+
+値を参照する場合は以下の記述（値のみの場合は`useRecoilValue`を使用し、更新のみの場合は`useSetRecoilState`を使用する）
+
+```jsx
+import { useRecoilState } from 'recoil';
+import { userState } from '../../store/userState';
+
+export const Users = () => {
+  const [userInfo, setUserInfo] = useRecoilState(userState);
+};
+```
+
+コンポーネントの再レンダリングについてもRecoil側で考慮されて最適化されている
