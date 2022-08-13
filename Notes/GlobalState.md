@@ -33,3 +33,18 @@ export const UserIconWithName = (props) => {
   const context = useContext(UserContext);
 };
 ```
+
+## 固定ではなくグローバルに変更が行えるstateを作成する
+```jsx
+export const UserProvider = (props) => {
+  const { children } = props;
+  const [userInfo, setUserInfo] = useState(null);
+
+  return (
+    <UserContext.Provider value={{ userInfo, setUserInfo }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+```
+上記の内容で配下のコンポーネントからstateの参照と更新ができるようになる
